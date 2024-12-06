@@ -26,3 +26,5 @@ language = 'fr'
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+import os
+html_output = os.environ.get('READTHEDOCS_OUTPUT', '_build') + '/html'
