@@ -1,7 +1,17 @@
 Introduction
 ============
+Projet :
+- Lunettes intelligentes pour malvoyantes
 
-Bienvenue dans la documentation du projet Lunettes intelligentes. 
+Réalisé par :
+- lemlih Sabah
+- El Achabi Aya
+
+Encadré par :
+- M.Masrour
+
+But :
+
 Offrir une solution innovante permettant aux personnes malvoyantes de mieux comprendre leur environnement grâce à des descriptions vocales générées en temps réel.
 
 Fonctionnalités principales :
