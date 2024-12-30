@@ -114,29 +114,49 @@ Offrir une solution innovante permettant aux personnes malvoyantes de mieux comp
 </section>
 <section id="utilisation">
 <h1>Utilisation<a class="headerlink" href="#utilisation" title="Lien vers cette rubrique"></a></h1>
+<p>Fonctionnalités principales
+1. Reconnaissance vocale
+Les lunettes écoutent les commandes vocales de l’utilisateur grâce à la bibliothèque speech_recognition. Une fois activées avec le mot-clé « mes lunettes », elles exécutent l’une des commandes suivantes :</p>
+<p>« détection d’objet » : Lance la détection d’objets en temps réel.</p>
+<p>« reconnaissance faciale » : Identifie les visages connus et annonce leurs noms.</p>
+<p>« audio » : Lit un texte à partir d’une image et le convertit en audio.</p>
+<p>« folos » : Effectue la détection des monnaies marocaines.</p>
+<p>2. Détection d’objets
+Utilisant le modèle YOLOv8, les lunettes détectent et annoncent les objets présents dans l’environnement de l’utilisateur. La détection s’effectue en temps réel via la caméra embarquée. Chaque objet détecté est annoncé une seule fois, évitant des répétitions inutiles.</p>
+<p>3. Reconnaissance faciale
+La reconnaissance faciale est réalisée à l’aide des modèles de dlib pour identifier les visages connus. Les visages sont comparés avec une base de données préenregistrée, et les noms correspondants sont annoncés à l’utilisateur.</p>
+<p>4. Conversion de texte en audio
+Les lunettes capturent une image contenant du texte, extraient le contenu texte à l’aide de Tesseract OCR, puis le transforment en audio grâce à la bibliothèque gTTS. Le fichier audio est lu directement après la conversion.</p>
+<p>5. Détection de monnaies marocaines
+Grâce à un modèle YOLO personnalisé, les lunettes détectent différentes dénominations de la monnaie marocaine et annoncent leur valeur à l’utilisateur.</p>
 <p>### Pré-requis</p>
 <p>Pour utiliser ce projet, vous devez avoir :
-- Python 3.7 ou plus récent.
-- pip installé.
-- Bibliothèques Python : OpenCV, PyTorch/TensorFlow, gTTS …</p>
-<p>### schema</p>
-<p>smart-glasses-project/
-│
-├── src/
-│   ├── face_recognition.py     # Module de reconnaissance faciale
-│   ├── object_detection.py     # Module pour détecter les objets environnants
-│   ├── money_detection.py     # Module pour détecter la monnaie
-│   ├── voice_command.py        # Module de gestion des commandes vocales
-│   ├── image_to_text.py        # Module pour convertir l’image en texte
-│   └── text_to_audio.py        # Module pour convertir le texte en audio
-│
-├── models/                     # Modèles pré-entraînés et données
-│   ├── yolov8.pt          # Modèle YOLO pour détection d’objets
-│   ├── best.pt            # Modèle YOLO pour détection de money
-│   ├── embeddings/             # Embeddings des visages
-│   │   └── embeddings_db.npy
-│   └── tesseract/              # Modèles OCR pour la reconnaissance de texte
-│</p>
+- Technologies utilisées
+- Python : Langage principal pour le développement.
+- YOLOv8 : Modèle de vision par ordinateur pour la détection d’objets et de monnaies.
+- dlib : Bibliothèque utilisée pour la reconnaissance faciale.
+- Tesseract OCR : Extraction de texte à partir d’images.
+- speech_recognition : Pour la reconnaissance des commandes vocales.
+- gTTS et playsound : Pour la synthèse vocale et la lecture des fichiers audio.
+- OpenCV : Gestion de la caméra et affichage des résultats en temps réel.</p>
+<p>### schéma</p>
+<p>smart-glasses-project/</p>
+<p>│</p>
+<p>├── src/</p>
+<p>│   ├── face_recognition.py     # Module de reconnaissance faciale</p>
+<p>│   ├── object_detection.py     # Module pour détecter les objets environnants</p>
+<p>│   ├── money_detection.py     # Module pour détecter la monnaie</p>
+<p>│   ├── voice_command.py        # Module de gestion des commandes vocales</p>
+<p>│   ├── image_to_text.py        # Module pour convertir l’image en texte</p>
+<p>│   └── text_to_audio.py        # Module pour convertir le texte en audio</p>
+<p>│</p>
+<p>├── models/                     # Modèles pré-entraînés et données</p>
+<p>│   ├── yolov8.pt          # Modèle YOLO pour détection d’objets</p>
+<p>│   ├── best.pt            # Modèle YOLO pour détection de money</p>
+<p>│   ├── embeddings/             # Embeddings des visages</p>
+<p>│   │   └── embeddings_db.npy</p>
+<p>│   └── tesseract/              # Modèles OCR pour la reconnaissance de texte</p>
+<p>│</p>
 </section>
 
 
